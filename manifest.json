@@ -1,7 +1,7 @@
 {
   "id": "higuchi-publisher",
   "name": "Higuchi Publisher",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "minAppVersion": "1.13.0",
   "description": "Draft articles, prepare text and illustrations for Dzen, and export to Markdown or HTML.",
   "author": "Higuchi Lab",

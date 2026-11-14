@@ -1,5 +1,11 @@
 # История изменений
 
+## 0.8.10
+
+- Add Russian, English and Simplified Chinese interface options.
+- Use Obsidian file trash and element creation APIs.
+- Improve support for Chinese article and section titles.
+
 ## 0.8.9
 
 - Обрезанное изображение можно скопировать вместе с подписью и вставить в черновик Дзена одним действием.

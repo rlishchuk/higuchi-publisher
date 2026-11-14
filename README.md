@@ -1,20 +1,71 @@
-# Higuchi Publisher
+# Higuchi Publisher 0.8.10
 
-Draft articles, preview them at phone width, and prepare text and illustrations for Dzen. Publisher can also export articles to Markdown and HTML. The interface is in Russian. [Руководство на русском](README.ru.md)
+Draft articles, prepare text and illustrations for Dzen, and export to Markdown or HTML. The interface supports English, Russian, and Simplified Chinese. Requires desktop Obsidian 1.13.0 or later.
 
 ## Installation
 
-Use desktop Obsidian 1.13.0 or later. Open **Settings → Community plugins → Browse**, search for **Higuchi Publisher**, and choose **Install** and **Enable**.
+In desktop Obsidian, open **Settings → Community plugins → Browse**. Search for **Higuchi Publisher**, then select **Install** and **Enable**.
+
+## Language
+
+Open **Settings → Higuchi Publisher → Interface language**, choose a language, and restart Obsidian. Existing articles and saved Dzen transfer records keep their contents.
 
 ## Usage
 
-1. Open Publisher from the feather icon or the command palette. Confirm the articles folder and create an article.
-2. Choose **Подготовить для Дзена** to preview the article. Crop screenshots if needed and prepare a folder with numbered illustrations.
-3. Copy the title, text and captions into your Dzen draft and upload the images from that folder.
-4. Mark the version as transferred. Publisher compares it with later edits and offers changed blocks and captions for copying.
+Open Publisher from the feather icon or the command palette. Confirm the articles folder and create your first article. Select **Prepare for Dzen** to preview the layout at phone width, crop screenshots, and export numbered copies of the illustrations. Use the copy buttons to paste the title, text and captions into your Dzen draft. After you transfer the article, mark that version to compare it with later edits.
 
-## Data and license
+In the Articles panel, use **Check** to find missing notes and images, **Preview** to review the assembled article, or **Export** to save Markdown and HTML. In the editor, run **Insert illustration** to pick an image or paste one from the clipboard, add a caption, and crop a Dzen copy. The original image stays in the project.
 
-Articles, images and exports are processed locally in your vault. Publisher writes to the clipboard only when you select a copy command. Use your browser to edit drafts in Dzen.
+The plugin writes to the clipboard when you choose a copy command. Articles and images are processed locally in your vault. The plugin does not make network requests or collect telemetry. It can open your saved Dzen draft in your browser. Use Dzen in your browser to create the draft. HTML export embeds local images as Base64 data to make the file self-contained. The official build is free for personal and commercial use. The source code is private and available to Obsidian for review.
 
-The official build is free for personal and commercial use. The source repository is private and available to Obsidian for verification. See the [binary license](LICENSE) and [third-party notices](THIRD-PARTY-NOTICES.txt).
+Локальная мастерская статей для настольного Obsidian. Собирайте статью по разделам, проверяйте её с иллюстрациями в ширине телефона и переносите в черновик Дзена. Готовая сборка бесплатна для личной и коммерческой работы. Исходный код закрыт и доступен Obsidian для проверки. Условия использования и лицензии зависимостей указаны в [LICENSE](LICENSE) и [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt).
+
+## Начать писать
+
+Открой своё хранилище и выполни команду «Higuchi Publisher: Открыть структуру статьи». При первом запуске подтверди создание папки статей. Выбор статьи в панели открывает её текст. При создании статьи можно выбрать «Одна заметка» или «Отдельные разделы». В одной заметке пиши текст подряд и ставь `##` перед подзаголовками. Они появятся в панели и будут вести к нужным местам в заметке.
+
+В режиме разделов кнопка «+ Раздел» создаёт заметку и открывает её в редакторе. В меню «⋯» можно добавить подраздел и изменить порядок соседних разделов. Кружок меняет статус готовности. Во вкладке «Материалы» находятся источники и рабочие заметки.
+
+Внизу панели доступны проверка, предпросмотр и экспорт. Предпросмотр и экспорт собирают актуальный текст при нажатии. Ошибки открывают отчёт со ссылками на проблемные файлы. Экспорт создаёт новую папку в `exports` с Markdown, HTML и копиями изображений.
+
+Нажми «Подготовить для Дзена». Переключи предпросмотр на телефон или компьютер, чтобы увидеть текст, изображения и подписи. Предпросмотр работает локально. В черновике Дзена оформление может отличаться.
+
+У обрезанной картинки с подписью нажми «Скопировать обрезку с подписью» и вставь её в пустой абзац черновика Дзена. Подпись появится под картинкой.
+
+Скопируй заголовок и текст в разные поля черновика. Нажми «Подготовить папку». Publisher сохранит копии изображений в `exports/dzen-…` внутри проекта. Номера в именах файлов соответствуют меткам «[Фото 1]», «[Фото 2]» и далее. Загрузи файлы вместо меток, вставь подписи и отметь готовые изображения. Отметки хранятся в Obsidian на этом устройстве для текущей статьи. Подписи берутся из описаний изображений в Markdown.
+
+Нажми «Проверить и обрезать» рядом со скриншотом PNG или JPEG. Выдели область на исходнике мышью или введи её границы в пикселях. Справа видно, как обрезка будет выглядеть в ширине телефона. После сохранения Publisher использует копию из `exports/dzen-crops` для предпросмотра и сборки папки для Дзена. Подпись, место в статье и оригинал сохраняются. Кнопка «Вернуть оригинал для Дзена» переключает файл обратно. Выбор хранится локально для изображения в текущей статье.
+
+Для правок в готовом черновике раскрой «Исправить фрагмент в черновике» и скопируй нужный абзац, заголовок или список. Выдели соответствующий фрагмент в Дзене и вставь правку. Абзацы с изображениями пропускаются в списке фрагментов, чтобы при вставке не заменить иллюстрацию меткой.
+
+В «Подготовить для Дзена» сохрани ссылку на редактор черновика. Она записывается в манифест статьи. Когда черновик соответствует статье, открой «Правки для черновика» и нажми «Отметить как перенесённое». После изменений Publisher покажет, какой текст, файл или подпись нужно обновить и между какими фрагментами стоит изображение. Отмечай правки по одной. Отметки хранятся в Obsidian на этом устройстве. Когда все правки готовы, сохрани новую версию переноса.
+
+## Файлы и резервные копии
+
+Манифест проекта находится в `Articles/<название>-<id>/article.yaml`. Он указывает путь к одной заметке или к файлам в `sections`. Источники и исследования лежат в `references` и `research`. Каждое изменение манифеста через плагин сохраняет предыдущую версию в `snapshots`. Сборка читает актуальный текст; изменение плана во время операции обнаруживается и не затирается.
+
+Обычные YAML-поля расширений сохраняются. Снимки манифеста не заменяют резервные копии текстов и всего хранилища. Пользовательские рукописи не находятся в этом репозитории кода, автосинхронизация писательского хранилища отдельно не настроена.
+
+## Изображения и ссылки
+
+В редакторе статьи или раздела выбери «Вставить иллюстрацию» в контекстном меню или палитре команд. Выбери файл или вставь изображение из буфера, добавь подпись и проверь вид на ширине телефона. PNG и JPEG можно обрезать в этом же окне. Publisher сохранит исходник в `assets` и вставит его под строкой курсора, а для Дзена подготовит обрезанную копию.
+
+Картинки положи в `assets` проекта. Используй путь от корня проекта: `![Подпись](assets/picture.png)`. Поддерживаются PNG, JPG, GIF, WebP до 10 МБ на изображение. HTML встраивает их как данные и не загружает внешние ресурсы.
+
+Ссылки на разделы можно задавать как `[[Название раздела]]`, `[[sections/id|Подпись]]` или `[Подпись](sections/id.md)`. Ссылка на отдельный заголовок сейчас ведёт к началу раздела с предупреждением. Вставки изображений `![[...]]` разрешаются относительно заметки по правилам Obsidian. Внешние изображения и неразрешённые локальные ссылки отмечаются ошибками.
+
+Поддерживаются обычный Markdown, таблицы, списки, сноски и блоки кода. Сноски разных разделов получают отдельные идентификаторы. Код отображается моноширинным шрифтом без цветовой подсветки. Исходный HTML выводится текстом и не исполняется. Глубина заголовков ограничена шестью уровнями HTML.
+
+## Производительность
+
+Нет таймеров, AI, RAG, облачных запросов или фонового сканирования. Список проектов читается при открытии и явном обновлении панели. Сборка выполняется по кнопке. Редактор остаётся штатным редактором Obsidian. При большом количестве изображений сборка может потребовать заметную память.
+
+## Разработка
+
+Node.js 22, `npm ci`, `npm run check`. Проверяются TypeScript strict, ESLint, тесты Vitest и Prettier. `npm run build` создаёт main.js. Пакет плагина: main.js, manifest.json, styles.css. GitLab CI сохраняет их как артефакты.
+
+Зависимости: YAML сохраняет структуру манифеста, markdown-it разбирает Markdown, markdown-it-footnote обрабатывает сноски. Поля манифеста проверяет Publisher.
+
+## Следующие версии
+
+Переименование, архивирование, разделение и объединение фрагментов, автоматическое обновление дерева, полноценные ссылки на подзаголовки, удобная вставка картинок. Для книг разрабатывается самостоятельный плагин Higuchi Writer в отдельном хранилище и репозитории. AI и DOCX/EPUB рассматриваются отдельно.
